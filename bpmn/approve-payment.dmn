@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_04ja21w" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.7.2">
+  <decision id="approve-payment-dmn" name="Approve Payment">
+    <extensionElements>
+      <biodi:bounds x="150" y="150" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Item">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>item</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Approved" name="approved" typeRef="boolean" />
+      <rule id="DecisionRule_0tlkom5">
+        <inputEntry id="UnaryTests_1lqvs3x">
+          <text>"item-xyz"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1e1jwkh">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1rnydjb">
+        <inputEntry id="UnaryTests_1eisfy8">
+          <text>not("item-xyz")</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1heb0i1">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
